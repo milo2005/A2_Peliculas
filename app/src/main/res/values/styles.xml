@@ -2,8 +2,8 @@
 
 
     <style name="ButtonAccent" parent="Widget.AppCompat.Button">
-        <item name="colorControlHighlight">#0000ff</item>
-        <item name="colorButtonNormal">#ff0000</item>
+        <item name="colorControlHighlight">@color/primaryDark</item>
+        <item name="colorButtonNormal">@color/primary</item>
         <item name="android:textColor">#ffffff</item>
     </style>
 
