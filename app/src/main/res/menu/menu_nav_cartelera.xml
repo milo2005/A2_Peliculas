@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_home"
+        android:title="@string/nav_home"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        />
+    <item android:id="@+id/nav_accion"
+        android:title="@string/nav_accion"
+        android:icon="@android:drawable/ic_menu_day"
+        />
+    <item android:id="@+id/nav_comedia"
+        android:title="@string/nav_comedia"
+        android:icon="@android:drawable/ic_menu_save"
+        />
+    <item android:id="@+id/nav_terror"
+        android:title="@string/nav_terror"
+        android:icon="@android:drawable/ic_menu_call"
+        />
+    <item android:id="@+id/nav_drama"
+        android:title="@string/nav_drama"
+        android:icon="@android:drawable/ic_menu_camera"
+        />
+    <item android:id="@+id/nav_infantil"
+        android:title="@string/nav_infantiles"
+        android:icon="@android:drawable/ic_menu_manage"
+        />
+
+    <item android:title="@string/nav_perfil"
+        >
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:title="@string/nav_logout"
+                />
+        </menu>
+    </item>
+
+
+</menu>

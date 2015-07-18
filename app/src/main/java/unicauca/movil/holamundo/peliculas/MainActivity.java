@@ -1,5 +1,6 @@
 package unicauca.movil.holamundo.peliculas;
 
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -50,8 +51,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     pass.setError("El usuario y/o contraseña no coinciden");
                     pass.setErrorEnabled(true);
                 }else{
-                    Toast.makeText(this,"Bienvenido "+u.getNombre()
-                            ,Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(this, CarteleraActivity.class);
+                    startActivity(intent);
                 }
 
 

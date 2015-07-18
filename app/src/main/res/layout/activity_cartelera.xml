@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    tools:context="unicauca.movil.holamundo.peliculas.CarteleraActivity">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btn_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="10dp"
+                app:backgroundTint="@color/primary"
+                app:rippleColor="@color/primaryDark"
+                app:fabSize="normal"
+                app:elevation="12dp"
+                android:src="@android:drawable/ic_menu_share"
+                />
+
+
+        </FrameLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:menu="@menu/menu_nav_cartelera"
+            app:itemTextColor="@color/nav_item_txt"
+            app:itemIconTint="@color/nav_item_icon"
+            app:headerLayout="@layout/header_nav"
+            android:background="@color/nav_bg"
+            android:layout_gravity="start"
+
+
+            />
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+
+</RelativeLayout>

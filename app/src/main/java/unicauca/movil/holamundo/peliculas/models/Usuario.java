@@ -1,6 +1,8 @@
 package unicauca.movil.holamundo.peliculas.models;
 
 import android.content.Context;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.orm.SugarContext;
 import com.orm.SugarRecord;
