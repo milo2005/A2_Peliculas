@@ -61,7 +61,7 @@ public class Usuario extends SugarRecord {
             usr.setNombre("Dario Chamorro");
             usr.setUsr("dario");
             usr.setPass("123");
-            usr.setUrlImg("https://goo.gl/QCNj5w");
+            usr.setUrlImg("https://goo.gl/aJT5IZ");
             usr.save();
         }
     }

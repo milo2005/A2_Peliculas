@@ -7,7 +7,7 @@
     <string name="login_pass">Contraseña</string>
     <string name="login_btn_register">Registrar</string>
     <string name="login_btn_in">Entrar</string>
-    <string name="title_activity_cartelera">CarteleraActivity</string>
+    <string name="title_activity_cartelera">Cartelera</string>
     <string name="nav_home">Inicio</string>
     <string name="nav_accion">Accion</string>
     <string name="nav_comedia">Comedia</string>
@@ -16,4 +16,7 @@
     <string name="nav_infantiles">Infantiles</string>
     <string name="nav_perfil">Perfil</string>
     <string name="nav_logout">Cerrar Sesion</string>
+    <string name="title_activity_root">RootActivity</string>
+    <string name="drawer_open">Menu lateral abierto</string>
+    <string name="drawer_close">Menu lateral cerrado</string>
 </resources>
