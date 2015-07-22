@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/template_img"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:src="#33b5e5"
+                />
+
+            <TextView
+                android:id="@+id/template_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/template_img"
+                android:padding="@dimen/template_padding_small"
+                android:background="#33000000"
+                android:textColor="#ffffff"
+                android:text="Titulo"
+                android:textSize="30sp"
+                />
+
+            <ImageView
+                android:id="@+id/template_icon_time"
+                android:layout_width="@dimen/template_icon"
+                android:layout_height="@dimen/template_icon"
+                android:src="@android:drawable/ic_menu_compass"
+                android:layout_below="@id/template_img"
+                android:layout_margin="@dimen/template_padding_small"
+                />
+
+            <TextView
+                android:id="@+id/template_txt_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/template_icon_time"
+                android:layout_alignBottom="@id/template_icon_time"
+                android:text="2 horas"
+                android:textSize="23sp"
+                />
+
+            <ImageView
+                android:id="@+id/template_icon_score"
+                android:layout_width="@dimen/template_icon"
+                android:layout_height="@dimen/template_icon"
+                android:src="@android:drawable/ic_menu_share"
+                android:layout_marginLeft="@dimen/template_padding_small"
+                android:layout_marginBottom="@dimen/template_padding_small"
+                android:layout_marginRight="@dimen/template_padding_small"
+                android:layout_below="@id/template_icon_time"
+
+                />
+
+            <TextView
+                android:id="@+id/template_txt_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/template_icon_score"
+                android:layout_alignBottom="@id/template_icon_score"
+                android:text="5,5"
+                android:textSize="23sp"
+                />
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
