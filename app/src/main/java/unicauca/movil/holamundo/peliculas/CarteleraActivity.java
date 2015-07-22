@@ -2,15 +2,14 @@ package unicauca.movil.holamundo.peliculas;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.net.Uri;
-import android.os.PersistableBundle;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.Menu;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,6 +19,10 @@ import com.makeramen.roundedimageview.RoundedTransformationBuilder;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
+import java.util.List;
+
+import unicauca.movil.holamundo.peliculas.adapters.PeliculaAdapter;
+import unicauca.movil.holamundo.peliculas.models.Pelicula;
 import unicauca.movil.holamundo.peliculas.util.AppUtil;
 
 
@@ -31,6 +34,10 @@ public class CarteleraActivity extends ActionBarActivity implements NavigationVi
 
     ActionBarDrawerToggle toggle;
 
+    RecyclerView recyclerView;
+    PeliculaAdapter adapter;
+    List<Pelicula> data;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +45,19 @@ public class CarteleraActivity extends ActionBarActivity implements NavigationVi
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        recyclerView = (RecyclerView) findViewById(R.id.recycler);
+
+        data = Pelicula.listAll(Pelicula.class);
+        adapter = new PeliculaAdapter(this, data);
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         preferences = getSharedPreferences(AppUtil.PREFERENCE_NAME
                 , MODE_PRIVATE);
 
         drawer = (DrawerLayout) findViewById(R.id.drawer);
         drawer.setDrawerListener(this);
-
 
         toggle =  new ActionBarDrawerToggle(this,drawer
                 ,R.string.drawer_open, R.string.drawer_close);

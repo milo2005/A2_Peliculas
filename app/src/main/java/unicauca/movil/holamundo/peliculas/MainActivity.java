@@ -43,7 +43,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         btnRegistro.setOnClickListener(this);
         btnEntrar.setOnClickListener(this);
 
-        Usuario.init(this);
+
     }
 
     @Override

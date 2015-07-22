@@ -1,5 +1,8 @@
 package unicauca.movil.holamundo.peliculas.models;
 
+import android.content.Context;
+
+import com.orm.SugarContext;
 import com.orm.SugarRecord;
 
 /**
@@ -66,30 +69,61 @@ public class Pelicula extends SugarRecord{
         this.score = score;
     }
 
-    public static void init(){
+    public static void init(Context context){
+        SugarContext.init(context);
         if(count(Pelicula.class)<1){
 
             Pelicula p = new Pelicula();
-            p.setNombre("Vengadores");
+            p.setNombre("Intensamente");
             p.setDirector("Dario Chamorro");
             p.setDuracion("2 horas");
-            p.setGenero("Accion");
+            p.setGenero("Comedia");
             p.setScore(4.7f);
-            p.setUrlImg("http://goo.gl/ThLpnB");
-            p.setDescripcion("Pelicula de los Super Heroes de Marvel");
+            p.setUrlImg("http://goo.gl/DXhFnq");
+            p.setDescripcion("Una niña llamada Riley ha nacido en Minnesota y en su mente viven cinco de sus emociones (Alegría, Tristeza, Miedo, Asco e Ira en la versión española; y Alegría, Tristeza, Temor, Desagrado y Furia en la versión hispanoamericana). A medida que Riley crece, se van agregando emociones, siendo Alegría la primera y Furia/Ira la última emoción en unirse.");
             p.save();
 
 
 
             p = new Pelicula();
-            p.setNombre("Batman v Superman");
+            p.setNombre("Minions");
             p.setDirector("Dario Chamorro");
             p.setDuracion("2 horas");
-            p.setGenero("Accion");
+            p.setGenero("Comeida");
             p.setScore(4.8f);
-            p.setUrlImg("http://goo.gl/J4YfqA");
-            p.setDescripcion("Pelicula de los Super Heroes de DC");
+            p.setUrlImg("http://goo.gl/o8WA83");
+            p.setDescripcion("Los minions son pequeñas criaturas, con forma de píldora de color amarillo que han existido desde el principio del tiempo, como evolución de organismos unicelulares que tienen un solo propósito: servir al villano más despreciable de la historia");
             p.save();
+
+        p = new Pelicula();
+        p.setNombre("Antman");
+        p.setDirector("Dario Chamorro");
+        p.setDuracion("2 horas");
+        p.setGenero("Accion");
+        p.setScore(4.8f);
+        p.setUrlImg("http://goo.gl/FJEpGm");
+        p.setDescripcion("El ladrón Scott Lang debe ayudar a su mentor, el Dr. Hank Pym, a salvaguardar el misterio de la tecnología de Ant-Man –que permite a su usuario disminuir el tamaño, pero aumentar en fuerza– de varias amenazas.");
+        p.save();
+
+        p = new Pelicula();
+        p.setNombre("Terminator");
+        p.setDirector("Dario Chamorro");
+        p.setDuracion("2 horas");
+        p.setGenero("Accion");
+        p.setScore(4.8f);
+        p.setUrlImg("http://goo.gl/3EcZGC");
+        p.setDescripcion("En el año 2029, John Connor , líder de la resistencia humana, conduce la guerra contra las máquinas. John es notificado por su unidad del ejército, Tech-Com , que Skynet le atacará desde dos frentes, el pasado y el futuro, y en última instancia va a cambiar la guerra para siempre.");
+        p.save();
+
+        p = new Pelicula();
+        p.setNombre("Jurassic World");
+        p.setDirector("Dario Chamorro");
+        p.setDuracion("2 horas");
+        p.setGenero("Accion");
+        p.setScore(4.8f);
+        p.setUrlImg("http://goo.gl/fAip90");
+        p.setDescripcion("Han pasado veintidós años desde el fallido intento de abrir Jurassic Park y pese a que en un principio todo quedó abandonado y en el olvido, la compañía InGen lo ha reabierto bajo el nombre de Jurassic World en la Isla Nublar.  ");
+        p.save();
 
         }
 

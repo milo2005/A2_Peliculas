@@ -17,8 +17,8 @@
             <ImageView
                 android:id="@+id/template_img"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:src="#33b5e5"
+                android:layout_height="140dp"
+                android:src="#ffab32ff"
                 android:scaleType="centerCrop"
                 />
 
@@ -35,33 +35,12 @@
                 />
 
             <ImageView
-                android:id="@+id/template_icon_time"
-                android:layout_width="@dimen/template_icon"
-                android:layout_height="@dimen/template_icon"
-                android:src="@android:drawable/ic_menu_compass"
-                android:layout_below="@id/template_img"
-                android:layout_margin="@dimen/template_padding_small"
-                />
-
-            <TextView
-                android:id="@+id/template_txt_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/template_icon_time"
-                android:layout_alignBottom="@id/template_icon_time"
-                android:text="2 horas"
-                android:textSize="23sp"
-                />
-
-            <ImageView
                 android:id="@+id/template_icon_score"
                 android:layout_width="@dimen/template_icon"
                 android:layout_height="@dimen/template_icon"
                 android:src="@android:drawable/ic_menu_share"
-                android:layout_marginLeft="@dimen/template_padding_small"
-                android:layout_marginBottom="@dimen/template_padding_small"
-                android:layout_marginRight="@dimen/template_padding_small"
-                android:layout_below="@id/template_icon_time"
+                android:layout_margin="@dimen/template_padding_small"
+                android:layout_below="@id/template_img"
 
                 />
 
