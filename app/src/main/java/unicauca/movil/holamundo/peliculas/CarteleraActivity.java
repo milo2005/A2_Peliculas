@@ -2,10 +2,13 @@ package unicauca.movil.holamundo.peliculas;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,11 +25,12 @@ import com.squareup.picasso.Transformation;
 import java.util.List;
 
 import unicauca.movil.holamundo.peliculas.adapters.PeliculaAdapter;
+import unicauca.movil.holamundo.peliculas.layoutmanagers.CustomGridLayoutManager;
 import unicauca.movil.holamundo.peliculas.models.Pelicula;
 import unicauca.movil.holamundo.peliculas.util.AppUtil;
 
 
-public class CarteleraActivity extends ActionBarActivity implements NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener {
+public class CarteleraActivity extends ActionBarActivity implements NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener, View.OnClickListener, PeliculaAdapter.OnItemClick {
 
     NavigationView nav;
     DrawerLayout drawer;
@@ -38,6 +42,10 @@ public class CarteleraActivity extends ActionBarActivity implements NavigationVi
     PeliculaAdapter adapter;
     List<Pelicula> data;
 
+    SwipeRefreshLayout swipe;
+
+    FloatingActionButton fab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,13 +53,24 @@ public class CarteleraActivity extends ActionBarActivity implements NavigationVi
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler);
+        Pelicula.init(this);
 
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(this);
+
+        swipe = (SwipeRefreshLayout) findViewById(R.id.swipe);
+        swipe.setColorSchemeColors(Color.argb(0xff, 0xff, 0x00, 0x00)
+                , Color.argb(0xff, 0x00, 0xff, 0x00)
+                , Color.argb(0xff, 0x00, 0x00, 0xff));
+
+
+        recyclerView = (RecyclerView) findViewById(R.id.recycler);
         data = Pelicula.listAll(Pelicula.class);
         adapter = new PeliculaAdapter(this, data);
+        adapter.setOnItemClick(recyclerView, this);
 
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new CustomGridLayoutManager(this));
 
         preferences = getSharedPreferences(AppUtil.PREFERENCE_NAME
                 , MODE_PRIVATE);
@@ -126,7 +145,7 @@ public class CarteleraActivity extends ActionBarActivity implements NavigationVi
 
     @Override
     public void onDrawerSlide(View drawerView, float slideOffset) {
-        toggle.onDrawerSlide(drawerView,slideOffset);
+        toggle.onDrawerSlide(drawerView, slideOffset);
     }
 
 
@@ -151,6 +170,18 @@ public class CarteleraActivity extends ActionBarActivity implements NavigationVi
         toggle.syncState();
     }
 
-    //endregion
 
+
+    //endregion
+    @Override
+    public void onClick(View v) {
+        swipe.setRefreshing(false);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra(DetailActivity.KEY_ID,data.get(position).getId());
+        startActivity(intent);
+    }
 }

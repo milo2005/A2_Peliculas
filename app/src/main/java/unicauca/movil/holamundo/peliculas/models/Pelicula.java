@@ -5,6 +5,8 @@ import android.content.Context;
 import com.orm.SugarContext;
 import com.orm.SugarRecord;
 
+import unicauca.movil.holamundo.peliculas.R;
+
 /**
  * Created by DarioFernando on 16/07/2015.
  */
@@ -74,55 +76,55 @@ public class Pelicula extends SugarRecord{
         if(count(Pelicula.class)<1){
 
             Pelicula p = new Pelicula();
-            p.setNombre("Intensamente");
-            p.setDirector("Dario Chamorro");
-            p.setDuracion("2 horas");
-            p.setGenero("Comedia");
+            p.setNombre(context.getString(R.string.test_pelicula_1_nombre));
+            p.setDirector(context.getString(R.string.test_pelicula_1_director));
+            p.setDuracion(context.getString(R.string.test_pelicula_1_duracion));
+            p.setGenero(context.getString(R.string.test_pelicula_1_genero));
             p.setScore(4.7f);
-            p.setUrlImg("http://goo.gl/DXhFnq");
-            p.setDescripcion("Una niña llamada Riley ha nacido en Minnesota y en su mente viven cinco de sus emociones (Alegría, Tristeza, Miedo, Asco e Ira en la versión española; y Alegría, Tristeza, Temor, Desagrado y Furia en la versión hispanoamericana). A medida que Riley crece, se van agregando emociones, siendo Alegría la primera y Furia/Ira la última emoción en unirse.");
+            p.setUrlImg(context.getString(R.string.test_pelicula_1_img));
+            p.setDescripcion(context.getString(R.string.test_pelicula_1_descripcion));
             p.save();
 
 
 
             p = new Pelicula();
-            p.setNombre("Minions");
-            p.setDirector("Dario Chamorro");
-            p.setDuracion("2 horas");
-            p.setGenero("Comeida");
+            p.setNombre(context.getString(R.string.test_pelicula_2_nombre));
+            p.setDirector(context.getString(R.string.test_pelicula_2_direcotr));
+            p.setDuracion(context.getString(R.string.test_pelicula_2_duracion));
+            p.setGenero(context.getString(R.string.test_pelicula_2_genero));
             p.setScore(4.8f);
-            p.setUrlImg("http://goo.gl/o8WA83");
-            p.setDescripcion("Los minions son pequeñas criaturas, con forma de píldora de color amarillo que han existido desde el principio del tiempo, como evolución de organismos unicelulares que tienen un solo propósito: servir al villano más despreciable de la historia");
+            p.setUrlImg(context.getString(R.string.test_pelicula_2_img));
+            p.setDescripcion(context.getString(R.string.test_pelicula_2_descripcion));
             p.save();
 
         p = new Pelicula();
-        p.setNombre("Antman");
-        p.setDirector("Dario Chamorro");
-        p.setDuracion("2 horas");
-        p.setGenero("Accion");
+        p.setNombre(context.getString(R.string.test_pelicula_3_nombre));
+        p.setDirector(context.getString(R.string.test_pelicula_3_director));
+        p.setDuracion(context.getString(R.string.test_pelicula_3_duracion));
+        p.setGenero(context.getString(R.string.test_pelicula_3_genero));
         p.setScore(4.8f);
-        p.setUrlImg("http://goo.gl/FJEpGm");
-        p.setDescripcion("El ladrón Scott Lang debe ayudar a su mentor, el Dr. Hank Pym, a salvaguardar el misterio de la tecnología de Ant-Man –que permite a su usuario disminuir el tamaño, pero aumentar en fuerza– de varias amenazas.");
+        p.setUrlImg(context.getString(R.string.test_pelicula_3_img));
+        p.setDescripcion(context.getString(R.string.test_pelicula_3_descripcion));
         p.save();
 
         p = new Pelicula();
-        p.setNombre("Terminator");
-        p.setDirector("Dario Chamorro");
-        p.setDuracion("2 horas");
-        p.setGenero("Accion");
+        p.setNombre(context.getString(R.string.test_pelicula_4_nombre));
+        p.setDirector(context.getString(R.string.test_pelicula_4_direcotr));
+        p.setDuracion(context.getString(R.string.test_pelicula_4_duracion));
+        p.setGenero(context.getString(R.string.test_pelicula_4_genero));
         p.setScore(4.8f);
-        p.setUrlImg("http://goo.gl/3EcZGC");
-        p.setDescripcion("En el año 2029, John Connor , líder de la resistencia humana, conduce la guerra contra las máquinas. John es notificado por su unidad del ejército, Tech-Com , que Skynet le atacará desde dos frentes, el pasado y el futuro, y en última instancia va a cambiar la guerra para siempre.");
+        p.setUrlImg(context.getString(R.string.test_pelicula_4_img));
+        p.setDescripcion(context.getString(R.string.test_pelicula_4_descripcion));
         p.save();
 
         p = new Pelicula();
-        p.setNombre("Jurassic World");
-        p.setDirector("Dario Chamorro");
-        p.setDuracion("2 horas");
-        p.setGenero("Accion");
+        p.setNombre(context.getString(R.string.test_pelicula_5_nombre));
+        p.setDirector(context.getString(R.string.test_pelicula_5_direcotr));
+        p.setDuracion(context.getString(R.string.test_pelicula_5_duracion));
+        p.setGenero(context.getString(R.string.test_pelicula_5_genero));
         p.setScore(4.8f);
-        p.setUrlImg("http://goo.gl/fAip90");
-        p.setDescripcion("Han pasado veintidós años desde el fallido intento de abrir Jurassic Park y pese a que en un principio todo quedó abandonado y en el olvido, la compañía InGen lo ha reabierto bajo el nombre de Jurassic World en la Isla Nublar.  ");
+        p.setUrlImg(context.getString(R.string.test_pelicula_5_img));
+        p.setDescripcion(context.getString(R.string.test_pelicula_5_descripcion));
         p.save();
 
         }

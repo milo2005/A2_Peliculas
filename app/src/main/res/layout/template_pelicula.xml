@@ -31,14 +31,14 @@
                 android:background="#33000000"
                 android:textColor="#ffffff"
                 android:text="Titulo"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 />
 
             <ImageView
                 android:id="@+id/template_icon_score"
                 android:layout_width="@dimen/template_icon"
                 android:layout_height="@dimen/template_icon"
-                android:src="@android:drawable/ic_menu_share"
+                android:src="@drawable/ic_grade_grey"
                 android:layout_margin="@dimen/template_padding_small"
                 android:layout_below="@id/template_img"
 
@@ -51,7 +51,7 @@
                 android:layout_toRightOf="@id/template_icon_score"
                 android:layout_alignBottom="@id/template_icon_score"
                 android:text="5,5"
-                android:textSize="23sp"
+                android:textSize="18sp"
                 />
 
 

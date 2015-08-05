@@ -19,4 +19,45 @@
     <string name="title_activity_root">RootActivity</string>
     <string name="drawer_open">Menu lateral abierto</string>
     <string name="drawer_close">Menu lateral cerrado</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="test_usr_name">Dario Chamorro</string>
+    <string name="test_usr">dario</string>
+    <string name="test_usr_pass">123</string>
+    <string name="test_usr_img">https://goo.gl/DRSAQv</string>
+
+    <string name="test_pelicula_1_nombre">Intensamente</string>
+    <string name="test_pelicula_1_director">Dario Chamorro</string>
+    <string name="test_pelicula_1_duracion">2 horas</string>
+    <string name="test_pelicula_1_genero">Comedia</string>
+    <string name="test_pelicula_1_img">http://goo.gl/DXhFnq</string>
+    <string name="test_pelicula_1_descripcion">Una niña llamada Riley ha nacido en Minnesota y en su mente viven cinco de sus emociones (Alegría, Tristeza, Miedo, Asco e Ira en la versión española; y Alegría, Tristeza, Temor, Desagrado y Furia en la versión hispanoamericana). A medida que Riley crece, se van agregando emociones, siendo Alegría la primera y Furia/Ira la ultima emoción en unirse.</string>
+
+    <string name="test_pelicula_2_nombre">Minions</string>
+    <string name="test_pelicula_2_direcotr">Dario Chamorro</string>
+    <string name="test_pelicula_2_duracion">2 horas</string>
+    <string name="test_pelicula_2_genero">Comedia</string>
+    <string name="test_pelicula_2_img">http://goo.gl/o8WA83</string>
+    <string name="test_pelicula_2_descripcion">Los minions son pequeñas criaturas, con forma de píldora de color amarillo que han existido desde el principio del tiempo, como evolución de organismos unicelulares que tienen un solo propósito: servir al villano más despreciable de la historia</string>
+
+    <string name="test_pelicula_3_nombre">Antman</string>
+    <string name="test_pelicula_3_director">Dario Chamorro</string>
+    <string name="test_pelicula_3_duracion">2 horas</string>
+    <string name="test_pelicula_3_genero">Accion</string>
+    <string name="test_pelicula_3_img">http://goo.gl/FJEpGm</string>
+    <string name="test_pelicula_3_descripcion">El ladrón Scott Lang debe ayudar a su mentor, el Dr. Hank Pym, a salvaguardar el misterio de la tecnología de Ant-Man que permite a su usuario disminuir el tamaño, pero aumentar en fuerza de varias amenazas.</string>
+
+    <string name="test_pelicula_4_nombre">Terminator</string>
+    <string name="test_pelicula_4_direcotr">Dario Chamorro</string>
+    <string name="test_pelicula_4_duracion">2 horas</string>
+    <string name="test_pelicula_4_genero">Accion</string>
+    <string name="test_pelicula_4_img">http://goo.gl/3EcZGC</string>
+    <string name="test_pelicula_4_descripcion">En el año 2029, John Connor , líder de la resistencia humana, conduce la guerra contra las máquinas. John es notificado por su unidad del ejército, Tech-Com , que Skynet le atacar desde dos frentes, el pasado y el futuro, y en última instancia va a cambiar la guerra para siempre.</string>
+
+    <string name="test_pelicula_5_nombre">Jurassic World</string>
+    <string name="test_pelicula_5_direcotr">Dario Chamorro</string>
+    <string name="test_pelicula_5_duracion">2 horas</string>
+    <string name="test_pelicula_5_genero">Accion</string>
+    <string name="test_pelicula_5_img">http://goo.gl/fAip90</string>
+    <string name="test_pelicula_5_descripcion">"Han pasado veintidós años desde el fallido intento de abrir Jurassic Park y pese a que en un principio todo quedó abandonado y en el olvido, la compañía InGen lo ha reabierto bajo el nombre de Jurassic World en la Isla Nublar.  "</string>
+    <string name="login_error">El usuario y/o contraseña no coinciden</string>
 </resources>

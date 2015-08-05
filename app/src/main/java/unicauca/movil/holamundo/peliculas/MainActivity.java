@@ -29,6 +29,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Usuario.init(this);
+
         preferences = getSharedPreferences(AppUtil.PREFERENCE_NAME
                 , MODE_PRIVATE);
 
@@ -58,7 +60,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 Usuario u = Usuario.findUsuarioByUserAndPass(this,usrText,passText);
 
                 if(u == null){
-                    pass.setError("El usuario y/o contraseña no coinciden");
+                    pass.setError(getString(R.string.login_error));
                     pass.setErrorEnabled(true);
                 }else{
 

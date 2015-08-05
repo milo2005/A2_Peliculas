@@ -9,6 +9,8 @@ import com.orm.SugarRecord;
 
 import java.util.List;
 
+import unicauca.movil.holamundo.peliculas.R;
+
 /**
  * Created by DarioFernando on 16/07/2015.
  */
@@ -58,10 +60,10 @@ public class Usuario extends SugarRecord {
 
         if(count(Usuario.class)<1){
             Usuario usr = new Usuario();
-            usr.setNombre("Dario Chamorro");
-            usr.setUsr("dario");
-            usr.setPass("123");
-            usr.setUrlImg("https://goo.gl/DRSAQv");
+            usr.setNombre(context.getString(R.string.test_usr_name));
+            usr.setUsr(context.getString(R.string.test_usr));
+            usr.setPass(context.getString(R.string.test_usr_pass));
+            usr.setUrlImg(context.getString(R.string.test_usr_img));
             usr.save();
         }
     }

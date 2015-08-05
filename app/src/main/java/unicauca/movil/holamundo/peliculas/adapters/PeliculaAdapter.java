@@ -20,19 +20,80 @@ import unicauca.movil.holamundo.peliculas.models.Pelicula;
 /**
  * Created by DarioFernando on 21/07/2015.
  */
-public class PeliculaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class PeliculaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
+
+    public interface OnItemClick{
+        void onItemClick(int position);
+    }
 
     static final int VIEW_SPAN = 0;
     static final int VIEW_NOSPAN = 1;
 
     Context context;
     List<Pelicula> data;
+    RecyclerView recyclerView;
+    OnItemClick onItemClick;
 
 
-    public PeliculaAdapter(Context context, List<Pelicula> data) {
+    public PeliculaAdapter(Context context,List<Pelicula> data) {
         this.context = context;
         this.data = data;
+
     }
+
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        RecyclerView.ViewHolder viewHolder = null;
+
+        if(viewType == VIEW_SPAN){
+            View v = View.inflate(context, R.layout.template_pelicula_span, null);
+            v.setOnClickListener(this);
+            viewHolder =  new PeliculaSpanViewHolder(v);
+        }else {
+            View v = View.inflate(context, R.layout.template_pelicula, null);
+            v.setOnClickListener(this);
+            viewHolder =  new PeliculaViewHolder(v);
+        }
+
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+        Pelicula p = data.get(position);
+
+        if(holder instanceof PeliculaSpanViewHolder ){
+            PeliculaSpanViewHolder spanHolder = (PeliculaSpanViewHolder) holder;
+            spanHolder.titulo.setText(p.getNombre());
+            spanHolder.duracion.setText(p.getDuracion());
+            spanHolder.calificacion.setText("" + p.getScore());
+            Picasso.with(context).load(Uri.parse(p.getUrlImg())).into(spanHolder.img);
+
+        }else {
+            PeliculaViewHolder pHolder = (PeliculaViewHolder) holder;
+            pHolder.titulo.setText(p.getNombre());
+            pHolder.calificacion.setText(""+p.getScore());
+            Picasso.with(context).load(Uri.parse(p.getUrlImg())).into(pHolder.img);
+
+        }
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return data.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if(position%3 == 0)
+            return VIEW_SPAN;
+        else
+            return VIEW_NOSPAN;
+    }
+
 
     //region ViewHolders
     public class PeliculaSpanViewHolder extends RecyclerView.ViewHolder{
@@ -66,54 +127,18 @@ public class PeliculaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
     //endregion
 
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    //region OnItemClick Event
 
-        RecyclerView.ViewHolder viewHolder = null;
-
-        if(viewType == VIEW_SPAN){
-            View v = View.inflate(context, R.layout.template_pelicula_span, null);
-            viewHolder =  new PeliculaSpanViewHolder(v);
-        }else {
-            View v = View.inflate(context, R.layout.template_pelicula, null);
-            viewHolder =  new PeliculaViewHolder(v);
-        }
-
-        return viewHolder;
+    public void setOnItemClick(RecyclerView recyclerView, OnItemClick onItemClick){
+        this.recyclerView = recyclerView;
+        this.onItemClick = onItemClick;
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
-        Pelicula p = data.get(position);
-
-        if(holder instanceof PeliculaSpanViewHolder ){
-            PeliculaSpanViewHolder spanHolder = (PeliculaSpanViewHolder) holder;
-            spanHolder.titulo.setText(p.getNombre());
-            spanHolder.duracion.setText(p.getDuracion());
-            spanHolder.calificacion.setText(""+p.getScore());
-            Picasso.with(context).load(Uri.parse(p.getUrlImg())).into(spanHolder.img);
-
-        }else {
-            PeliculaViewHolder pHolder = (PeliculaViewHolder) holder;
-            pHolder.titulo.setText(p.getNombre());
-            pHolder.calificacion.setText(""+p.getScore());
-            Picasso.with(context).load(Uri.parse(p.getUrlImg())).into(pHolder.img);
-
-        }
-
+    public void onClick(View v) {
+        int position = recyclerView.getChildAdapterPosition(v);
+        onItemClick.onItemClick(position);
     }
+    //endregion
 
-    @Override
-    public int getItemCount() {
-        return data.size();
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        if(position%3 == 0)
-            return VIEW_SPAN;
-        else
-            return VIEW_NOSPAN;
-    }
 }

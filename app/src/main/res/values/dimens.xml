@@ -7,6 +7,6 @@
     <dimen name="login_margin_small">10dp</dimen>
     <dimen name="nav_user">180dp</dimen>
     <dimen name="header_margin">10dp</dimen>
-    <dimen name="template_icon">40dp</dimen>
+    <dimen name="template_icon">26dp</dimen>
     <dimen name="template_padding_small">10dp</dimen>
 </resources>
